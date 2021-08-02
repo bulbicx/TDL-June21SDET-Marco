@@ -28,7 +28,7 @@ p, ul {
   margin-left: 1rem;
   padding: .25rem 0;
   font-weight: 700;
-  color: #CCD1D1!important;
+  color: #808B96!important;
   border-bottom: .25rem solid transparent;
 }
 
@@ -39,7 +39,8 @@ p, ul {
 
 .nav-link.active {
   color: #2C3E50!important;
-}
+  border-bottom-color: #2C3E50;
+ }
 
 
 /* 

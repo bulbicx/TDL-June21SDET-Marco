@@ -1,0 +1,88 @@
+/*
+ * Base structure
+ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+ background-color: #EDF2F8;
+ text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+ box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+ margin: 0;
+ padding: 0;
+}
+
+p, ul {
+ margin: 0;
+}
+
+/* 
+* Navbar
+*/
+#logo {
+ width: 9em;
+}
+
+.nav-link {
+ margin-left: 1rem;
+ padding: .25rem 0;
+ font-weight: 700;
+ color: #808B96!important;
+ border-bottom: .25rem solid transparent;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+ border-bottom-color: #2C3E50;
+}
+
+.nav-link.active {
+ color: #2C3E50!important;
+ border-bottom-color: #2C3E50;
+}
+
+
+/* 
+* Main content
+*/
+.main-container {
+ height: 100vh;
+ margin-top: 9em;
+}
+
+.to-do-container {
+  background-color: #FCF3CF;
+  width: 60vw;
+  margin: 2em;
+  padding: 2em;
+  border-top-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  border: 3px solid #F7DC6F;
+}
+
+
+/* Footer  */
+footer {
+ background-color: #2C3E50;
+ padding: .65em;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.social {
+ margin-left: 1em;
+ display: flex;
+ list-style-type: none;
+}
+
+.social li {
+ width: 3.4em;
+}
+
+.social-link {
+ text-decoration: none;
+ color: white;
+ font-size: 1.4rem;
+}
