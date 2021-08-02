@@ -13,7 +13,7 @@ body {
   padding: 0;
 }
 
-p {
+p, ul {
   margin: 0;
 }
 
@@ -82,4 +82,25 @@ p {
 footer {
   background-color: #2C3E50;
   padding: .65em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.social {
+  margin-left: 1em;
+  display: flex;
+  list-style-type: none;
+}
+
+.social li {
+  width: 3.4em;
+}
+
+.social-link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.4rem;
+}
+
+
