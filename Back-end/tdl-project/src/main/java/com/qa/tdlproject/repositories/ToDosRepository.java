@@ -8,5 +8,5 @@ import com.qa.tdlproject.models.ToDos;
 
 public interface ToDosRepository extends JpaRepository<ToDos, Long> {
 
-	List<ToDos> findToDoListByUserId(int userId);
+	
 }
