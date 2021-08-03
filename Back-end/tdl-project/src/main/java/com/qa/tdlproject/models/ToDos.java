@@ -15,10 +15,6 @@ public class ToDos {
 	@Column(name = "todos_id")
 	private Long todosId;
 
-	@Column(name = "user_id")
-	@NotNull
-	private int userId;
-
 	@NotNull
 	private String title;
 
@@ -27,15 +23,13 @@ public class ToDos {
 
 	public ToDos() { }
 
-	public ToDos(int userId, String title, boolean completed) {
-		this.userId = userId;
+	public ToDos(String title, boolean completed) {
 		this.title = title;
 		this.completed = completed;
 	}
 
-	public ToDos(Long todosId, int userId, String title, boolean completed) {
+	public ToDos(Long todosId, String title, boolean completed) {
 		this.todosId = todosId;
-		this.userId = userId;
 		this.title = title;
 		this.completed = completed;
 	}
@@ -46,14 +40,6 @@ public class ToDos {
 
 	public void setTodosId(Long todosId) {
 		this.todosId = todosId;
-	}
-
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
 	}
 
 	public String getTitle() {
