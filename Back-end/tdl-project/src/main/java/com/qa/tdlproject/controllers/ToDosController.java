@@ -37,10 +37,10 @@ public class ToDosController {
 		return new ResponseEntity<List<ToDos>>(this.service.getAllToDos(), HttpStatus.OK);
 	}
 	
-	@GetMapping("/{userId}")
-	public ResponseEntity<List<ToDos>> getToDoListByUserId(@PathVariable("userId") int userId) {
-		List<ToDos> toDosList = this.service.getToDoListByUserId(userId);
-		return new ResponseEntity<List<ToDos>>(toDosList, HttpStatus.OK);
+	@GetMapping("/{id}")
+	public ResponseEntity<ToDos> getToDoListByUserId(@PathVariable("id") Long id) {
+		ToDos data = this.service.getOneToDoById(id);
+		return new ResponseEntity<ToDos>(data, HttpStatus.OK);
 	}
 	
 	@PostMapping

@@ -1,6 +1,7 @@
 package com.qa.tdlproject.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.EntityNotFoundException;
 
@@ -25,9 +26,10 @@ public class ToDosService {
 		return this.repository.findAll();
 	}
 	
-	//It returns all to-dos related to a list of a user
-	public List<ToDos> getToDoListByUserId(int userId) {
-		return this.repository.findToDoListByUserId(userId);
+	//It returns one to-dos based on id provided
+	public ToDos getOneToDoById(Long id) {
+		Optional<ToDos> opt = repository.findById(id);
+		return opt.orElseThrow(() -> new EntityNotFoundException());
 	}
 	
 	//It adds a new to-do to the database
