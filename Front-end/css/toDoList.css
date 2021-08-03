@@ -48,7 +48,7 @@ p, ul {
 */
 .main-container {
  height: 100vh;
- margin-top: 9em;
+ margin-top: 6em;
 }
 
 .to-do-container {
@@ -59,6 +59,10 @@ p, ul {
   border-top-left-radius: 1em;
   border-bottom-right-radius: 1em;
   border: 3px solid #F7DC6F;
+}
+
+#title-page {
+  margin-bottom: 2em;
 }
 
 
