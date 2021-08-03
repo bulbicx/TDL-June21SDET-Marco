@@ -70,6 +70,12 @@ p, ul {
   margin-bottom: 2em;
 }
 
+.form-todo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* Footer  */
 footer {
