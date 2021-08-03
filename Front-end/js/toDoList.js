@@ -30,6 +30,7 @@
       let idValue = document.querySelector("#todo-id").value;
       toDoContainer.innerHTML = "";
       getOneToDo(idValue);
+      crudSelect.value = "";
     })
   }
 
@@ -62,6 +63,91 @@
       let value = document.querySelector("#todo-title").value;
       toDoContainer.innerHTML = "";
       addToDo(new ToDo(value, false));
+      crudSelect.value = "";
+    })
+  }
+
+  //display form to update an existing to-do
+  const displayUpdateForm = () => {
+    const form = `
+      <section class="text-center">
+      <p class="mb-4"><strong>Update</strong> a to do or mark as completed</p>
+        <form class="form-todo">
+          <div class="row justify-content-center">
+            <div class="col-12 mb-2">
+              <input 
+                class="form-control" 
+                type="text"  
+                id="todo-id" 
+                placeholder="To-do ID"
+              >
+            </div>
+            <div class="col-12 mb-2">
+              <input 
+                class="form-control" 
+                type="text"  
+                id="todo-title" 
+                placeholder="New title"
+              >
+            </div>
+            <div class="col-12 mb-2">
+              <input 
+                type="checkbox"  
+                id="todo-completed" 
+              >
+              <label for="todo-completed">Completed</label>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary update-btn">Update todo</button>
+            </div>
+          </div>
+        </form>
+      </section>
+      `;
+    toDoContainer.innerHTML = form;
+
+    let updateBtn = document.querySelector(".update-btn");
+
+    updateBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      let id = document.querySelector("#todo-id").value;
+      let value = document.querySelector("#todo-title").value;
+      let isCompleted = document.querySelector("#todo-completed").checked ? true : false;
+      toDoContainer.innerHTML = "";
+      updateToDo(id, new ToDo(value, isCompleted));
+      crudSelect.value = "";
+    })
+  }
+
+  //display form to delete to-do by id
+  const displayDeleteForm = () => {
+    const form = `
+      <section class="text-center">
+        <p class="mb-4">Please insert a to-do ID to <strong>delete</strong> a to do</p>
+        <form class="form-todo">
+          <div class="col-5 mx-4">
+            <input 
+              class="form-control" 
+              type="number" 
+              name="todo-id" 
+              id="todo-id" 
+              placeholder="To-do ID"
+            >
+          </div>
+          <button class="btn btn-primary">Delete</button>
+        </form>
+      </section>
+      `;
+    toDoContainer.innerHTML = form;
+
+    let btn = document.querySelector(".btn");
+    
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      let idValue = document.querySelector("#todo-id").value;
+      toDoContainer.innerHTML = "";
+      deleteToDo(idValue);
+      crudSelect.value = "";
     })
   }
 
@@ -124,11 +210,13 @@
         displayAddForm();
         break;
       case "update":
+        displayUpdateForm();
         break;
       case "delete":
+        displayDeleteForm();
         break;
       default:
-        console.log("error choosing the option");
+        console.log("Please choose an option");
     }
   }
   
