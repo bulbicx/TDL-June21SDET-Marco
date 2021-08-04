@@ -106,6 +106,6 @@ public class ToDosServiceUnitTest {
 		this.repo.deleteById(1L);
 		
 		//Then
-		assertThat(this.service.deleteToDos(1L)).isEqualTo("To do deleted successfully");
+		assertThat(this.service.deleteToDos(1L)).isEqualTo(1L);
 	}
 }
