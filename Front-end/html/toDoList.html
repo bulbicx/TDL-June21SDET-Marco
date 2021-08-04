@@ -4,13 +4,57 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To Do List</title>
+  <title>To do list</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/toDoList.css">
 </head>
 <body>
-  <h1>To Do List</h1>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">
+          <img src="../resources/logo.png" alt="logo" id="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+          <div class="navbar-nav justify-content-center align-items-center">
+            <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+            <a class="nav-link active" href="./toDoList.html">To Do List</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
 
+  <main class="main-container d-flex flex-column align-items-center">
+    <h2 id="title-page">To Do List</h2>
+    <div class="row">
+      <label for="crud-select">What would you like to do?</label>
+      <select class="form-select col-md-4" name="crud" id="crud-select">
+        <option value="">--Please choose an option--</option>
+        <option value="readAll">Retrieve all to dos</option>
+        <option value="readOne">Retrieve one to do</option>
+        <option value="create">Create a new to do</option>
+        <option value="update">Update to do</option>
+        <option value="delete">Delete to do</option>
+      </select>
+    </div>
+
+    <div class="to-do-container empty-container"></div>
+  </main>
+
+  <footer class="text-white-50">
+    <p>&copy; Marco Castellana 2021</p>
+    <ul class="social">
+      <li><a class="social-link" href="https://en-gb.facebook.com/"><i class="bi bi-facebook"></i></a></li>
+      <li><a class="social-link" href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a></li>
+      <li><a class="social-link" href="https://twitter.com/?lang=en-gb"><i class="bi bi-twitter"></i></a></li>
+    </ul>
+  </footer>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src="../js/toDoList.js"></script>
 </body>
