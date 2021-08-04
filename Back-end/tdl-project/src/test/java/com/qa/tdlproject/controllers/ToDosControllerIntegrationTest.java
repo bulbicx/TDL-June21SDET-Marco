@@ -7,6 +7,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -66,38 +69,30 @@ public class ToDosControllerIntegrationTest {
 		this.mock.perform(mockRequest).andExpect(matchBody).andExpect(matchStatus);
 	}
 	
-//	@Test
-//	void testListAllToDos() throws JsonProcessingException {
-//		//Create two object to have in the list
-//		ToDos strawberries = new ToDos("Buy strawberries", false);
-//		ToDos apples = new ToDos("Buy apples", false);
-//		
-//		//Convert objects into JSON
-//		String straberriesAsJSON = this.mapper.writeValueAsString(strawberries);
-//		String applesAsJSON = this.mapper.writeValueAsString(apples);
-//		
-//		//Build Mock request
-//		RequestBuilder mockRequest = get("/todos");
-//		
-//		//Create two object which should resemble two created object on database
-//		ToDos savedStrawberries = new ToDos(1L, "Buy strawberries", false);
-//		ToDos savedApples = new ToDos(2L, "Buy apples", false);
-//		
-//		//Convert saved object to JSON format
-//		String savedStraberriesAsJSON = this.mapper.writeValueAsString(savedStrawberries);
-//		String savedApplesAsJSON = this.mapper.writeValueAsString(savedApples);
-//		
-//		//Create a list and add the objects
-//		List<String> list = new ArrayList<>();
-//		list.add(savedStraberriesAsJSON);
-//		list.add(savedApplesAsJSON);
-//		
-//		//Check status code is OK(200)
-//		ResultMatcher matchStatus = status().isOk();
-//		
-//		//Check body contains the list above
-//		ResultMatcher matchBody = content().json(savedApplesAsJSON);
-//	}
+	@Test
+	void testListAllToDos() throws Exception {
+		//Build Mock request
+		RequestBuilder mockRequest = get("/todos");
+		
+		//Create object which should resemble the created object/s on database
+		ToDos savedApples = new ToDos(1L, "Buy apples", false);
+		
+		//Create a list and add the object
+		List<ToDos> list = new ArrayList<>();
+		list.add(savedApples);
+		
+		//Convert list to JSON format
+		String listAsJson = this.mapper.writeValueAsString(list);
+	
+		//Check status code is OK(200)
+		ResultMatcher matchStatus = status().isOk();
+		
+		//Check body contains the list above
+		ResultMatcher matchBody = content().json(listAsJson);
+		
+		//Build the request
+		this.mock.perform(mockRequest).andExpect(matchBody).andExpect(matchStatus);
+	}
 	
 	@Test
 	void testListOneToDo() throws Exception {
