@@ -1,0 +1,1 @@
+INSERT INTO `to_dos` (`title`, `completed`) VALUES ('Buy apples', false);
