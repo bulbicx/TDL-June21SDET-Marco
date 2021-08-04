@@ -183,6 +183,28 @@
     toDoContainer.innerHTML = el;
   }
 
+  const displayResponseMsg = (type, data) => {
+    setStyleContainer();
+    let el;
+    if (type == "create") {
+      el = `
+        <div class="alert alert-success" role="alert">
+          To do [${data.title}] created successfully!
+        </div>`;
+    } else if (type == "update") {
+      el = `
+        <div class="alert alert-success" role="alert">
+          To do [${data.title}] updated successfully!
+        </div>`;
+    } else if (type == "delete") {
+      el = `
+        <div class="alert alert-success" role="alert">
+          To do deleted successfully!
+        </div>`;
+    }
+    toDoContainer.innerHTML = el;
+  }
+
   //Displays background style
   const setStyleContainer = () => {
     toDoContainer.classList.remove("empty-container");
@@ -246,7 +268,7 @@
       body: JSON.stringify(new ToDo(toDo.title, toDo.completed))
     })
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => displayResponseMsg("create", data))
     .catch(error => console.error(error));
   }
   
@@ -260,7 +282,7 @@
       body: JSON.stringify(new ToDo(toDo.title, toDo.completed))
     })
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => displayResponseMsg("update", data))
     .catch(error => console.error(error));
   }
   
@@ -273,7 +295,7 @@
       }
     })
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => displayResponseMsg("delete", data))
     .catch(error => console.error(error));
   }
   

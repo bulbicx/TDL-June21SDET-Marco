@@ -11,10 +11,12 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import com.qa.tdlproject.selenium.pages.HomePage;
 import com.qa.tdlproject.selenium.pages.ToDoListPage;
 
+@SpringBootTest
 public class HomeTest {
 
 	private WebDriver driver;
@@ -24,6 +26,18 @@ public class HomeTest {
 		this.driver = new ChromeDriver();
 		this.driver.manage().window().maximize();
 		this.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	}
+	
+	@Test 
+	public void testOpeningPage() {
+		//Set up
+		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+		
+		//Go to Homepage URL
+		this.driver.get(homePage.URL);
+		
+		//Assert that the page is in the Homepage
+		assertThat(homePage.getTitle()).isEqualTo("Hey there!");
 	}
 	
 	@Test
@@ -58,6 +72,22 @@ public class HomeTest {
 	}
 	
 	@Test
+	public void testLogoLink() {
+		//Set up
+		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+		
+		//Go to to do page URL
+		this.driver.get(homePage.URL);
+		
+		//Click logo link
+		homePage.clickLogo();
+		
+		//verify that we are in the home page
+		assertTrue(homePage.getTitle().contains("Hey there!"));
+	}
+	
+	
+	@Test
 	public void testLearnMoreBtn() {
 		//Set up
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
@@ -85,43 +115,43 @@ public class HomeTest {
 		assertTrue(homePage.getFooter().contains("© Marco Castellana 2021"));
 	}
 	
-	@Test
-	public void testFbLink() {
-		//Set up
-		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-
-		//Go to Homepage URL
-		this.driver.get(homePage.URL);
-		
-		//Click facebook link
-		homePage.clickFbLink();
-		
-		//Assert that we are redirected to the facebook page
-//		assertThat(driver.getCurrentUrl()).isEqualTo("https://m.facebook.com/");
-	}
+//	@Test
+//	public void testFbLink() {
+//		//Set up
+//		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+//
+//		//Go to Homepage URL
+//		this.driver.get(homePage.URL);
+//		
+//		//Click facebook link
+//		homePage.clickFbLink();
+//		
+//		//Assert that we are redirected to the facebook page
+////		assertThat(driver.getCurrentUrl()).isEqualTo("https://m.facebook.com/");
+//	}
 	
-	@Test
-	public void testInstagramLink() {
-		//Set up
-		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-
-		//Go to Homepage URL
-		this.driver.get(homePage.URL);
-		
-		homePage.clickInstagramLink();
-		
-		assertThat(driver.getCurrentUrl()).isEqualTo("https://www.instagram.com/");
-	}
+//	@Test
+//	public void testInstagramLink() {
+//		//Set up
+//		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+//
+//		//Go to Homepage URL
+//		this.driver.get(homePage.URL);
+//		
+//		homePage.clickInstagramLink();
+//		
+//		assertThat(driver.getCurrentUrl()).isEqualTo("https://www.instagram.com/");
+//	}
 	
-	@Test
-	public void testTwitterLink() {
-		//Set up
-		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-
-		//Go to Homepage URL
-		this.driver.get(homePage.URL);
-		
-	}
+//	@Test
+//	public void testTwitterLink() {
+//		//Set up
+//		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+//
+//		//Go to Homepage URL
+//		this.driver.get(homePage.URL);
+//		
+//	}
 	
 	@AfterEach
 	public void tearDown() {
