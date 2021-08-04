@@ -115,44 +115,6 @@ public class HomeTest {
 		assertTrue(homePage.getFooter().contains("© Marco Castellana 2021"));
 	}
 	
-//	@Test
-//	public void testFbLink() {
-//		//Set up
-//		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-//
-//		//Go to Homepage URL
-//		this.driver.get(homePage.URL);
-//		
-//		//Click facebook link
-//		homePage.clickFbLink();
-//		
-//		//Assert that we are redirected to the facebook page
-////		assertThat(driver.getCurrentUrl()).isEqualTo("https://m.facebook.com/");
-//	}
-	
-//	@Test
-//	public void testInstagramLink() {
-//		//Set up
-//		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-//
-//		//Go to Homepage URL
-//		this.driver.get(homePage.URL);
-//		
-//		homePage.clickInstagramLink();
-//		
-//		assertThat(driver.getCurrentUrl()).isEqualTo("https://www.instagram.com/");
-//	}
-	
-//	@Test
-//	public void testTwitterLink() {
-//		//Set up
-//		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-//
-//		//Go to Homepage URL
-//		this.driver.get(homePage.URL);
-//		
-//	}
-	
 	@AfterEach
 	public void tearDown() {
 		this.driver.close();

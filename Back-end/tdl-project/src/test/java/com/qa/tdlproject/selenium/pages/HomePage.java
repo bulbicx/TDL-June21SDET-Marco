@@ -25,15 +25,6 @@ public class HomePage {
 	@FindBy(xpath = "/html/body/footer/p")
 	private WebElement footer;
 	
-	@FindBy(xpath = "/html/body/footer/ul/li[1]/a")
-	private WebElement fbLink;
-	
-	@FindBy(xpath = "/html/body/footer/ul/li[2]/a")
-	private WebElement instaLink;
-	
-	@FindBy(xpath = "/html/body/footer/ul/li[3]/a")
-	private WebElement twitterLink;
-	
 	public void clickToDoList() {
 		toDoListLink.click();
 	}
@@ -44,18 +35,6 @@ public class HomePage {
 	
 	public void clickLearnMoreBtn() {
 		learnMoreBtn.click();
-	}
-	
-	public void clickFbLink() {
-		fbLink.click();
-	}
-	
-	public void clickInstagramLink() {
-		instaLink.click();
-	}
-	
-	public void clickTwitterLink() {
-		twitterLink.click();
 	}
 
 	public String getTitle() {

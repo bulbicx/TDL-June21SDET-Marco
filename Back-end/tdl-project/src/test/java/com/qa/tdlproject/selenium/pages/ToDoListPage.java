@@ -58,20 +58,11 @@ public class ToDoListPage {
 	@FindBy(xpath = "/html/body/main/div[2]/section/form/button")
 	private WebElement deleteToDoBtn;
 	
-	@FindBy(xpath = "/html/body/main/div[2]/ul/li[1]")
+	@FindBy(xpath = "/html/body/main/div[2]/ul/li")
 	private WebElement retrieveAllFirstElement;
 	
 	@FindBy(xpath = "/html/body/footer/p")
 	private WebElement footer;
-	
-	@FindBy(xpath = "/html/body/footer/ul/li[1]/a")
-	private WebElement fbLink;
-	
-	@FindBy(xpath = "/html/body/footer/ul/li[2]/a")
-	private WebElement instaLink;
-	
-	@FindBy(xpath = "/html/body/footer/ul/li[3]/a")
-	private WebElement twitterLink;
 	
 	public void clickHome() {
 		homeLink.click();
@@ -137,18 +128,6 @@ public class ToDoListPage {
 	
 	public WebElement getToDo() {
 		return toDo;
-	}
-	
-	public void clickFbLink() {
-		fbLink.click();
-	}
-	
-	public void clickInstagramLink() {
-		instaLink.click();
-	}
-	
-	public void clickTwitterLink() {
-		twitterLink.click();
 	}
 
 	public String getTitle() {

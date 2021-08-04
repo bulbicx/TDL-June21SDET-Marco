@@ -193,7 +193,7 @@ public class ToDoListTest {
 		selectElement.selectByValue("readAll");
 		
 		//Verify that the retrieve all displays a list
-		assertThat(page.getFirstElRetrieveAll().getText()).isNotEqualTo("");
+		assertThat(page.getFirstElRetrieveAll().getText()).contains("apples");
 	}
 	
 	@Test
