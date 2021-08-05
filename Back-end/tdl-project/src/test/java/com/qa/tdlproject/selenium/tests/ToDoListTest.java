@@ -27,6 +27,22 @@ public class ToDoListTest {
 		this.driver = new ChromeDriver();
 		this.driver.manage().window().maximize();
 		this.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
+		ToDoListPage page = PageFactory.initElements(driver, ToDoListPage.class);
+		
+		//Go to to do page URL
+		this.driver.get(page.URL);
+		
+		//Click the create option from the dropdown menu
+		Select selectElement = new Select(page.getCrudDropdownMenu());
+		selectElement.selectByValue("create");
+		
+		//Insert a title onto the input field
+		String title = "Buy apples";
+		page.insertTitle(title);
+		
+		//Press the add button
+		page.clickAddBtn();
 	}
 	
 	@Test 
