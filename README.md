@@ -1,6 +1,6 @@
 # TDL
 
-This project is a Full stack Web application which acts as a system for creating and manipulating a To Do List or short for TDL, which will allow us to add, edit, read and delete to dos. The application was created using Spring Boot and It has been tested using JUnit, Integration tests and Selenium.
+This project is a Full stack Web application which acts as a system for creating and manipulating a To Do List or short for TDL, which will allow us to add, edit, read and delete to dos. The application was created using Spring Boot and It has been tested using Unit, Integration and Selenium tests.
 
 ## Getting Started
 
@@ -62,7 +62,7 @@ Or if we select to display all to dos, we will be presented with something simil
 
 ## Running the tests
 
-The application present JUnit tests, Integration tests and Selenium tests. It can be tested using JUnit, which is a dependency of Maven. JUnit tests have been used to test the services. Meanwhile integration tests have been used to test the controllers. Selenium will test the front-end of our application. To run all tests just right-click onto the project folder from **Package Explorer** and click on **Run As** > **JUnit Test**. There are 29 tests executed in total.
+The application present Unit tests, Integration tests and Selenium tests. It can be tested using JUnit, which is a dependency of Maven. Unit tests have been used to test the services. Meanwhile Integration tests have been used to test the controllers. Selenium will test the front-end of our application. To run all tests just right-click onto the project folder from **Package Explorer** and click on **Run As** > **JUnit Test**. There are 29 tests executed in total.
 
 ![JUnit and Integration tests](https://user-images.githubusercontent.com/56220535/128327092-304b25e3-fffb-40ad-affd-6d8d92d9f084.PNG)
 
@@ -72,7 +72,7 @@ The tests have a coverage of more than 80% which is the standard for tests to be
 
 ### Unit Tests 
 
-To run only JUnit tests we can right click onto any services located in our test folder, and click on **Run As** > **JUnit Test**. You will find that the tests files are named after the class they will be testing followed by **Test** keyword, as JUnit will recognize it in this way. 
+To run only Unit tests we can right click onto any services located in our test folder, and click on **Run As** > **JUnit Test**. You will find that the tests files are named after the class they will be testing followed by **Test** keyword, as JUnit will recognize it in this way. 
 
 ### Integration Tests 
 
