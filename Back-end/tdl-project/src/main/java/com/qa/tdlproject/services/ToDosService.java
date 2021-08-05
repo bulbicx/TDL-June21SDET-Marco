@@ -50,8 +50,9 @@ public class ToDosService {
 	}
 	
 	//It deletes an existing to-do from the database
-	public void deleteToDos(Long id) {
+	public Long deleteToDos(Long id) {
 		if (!repository.existsById(id)) throw new EntityNotFoundException();
 		repository.deleteById(id);
+		return id;
 	}
 }
