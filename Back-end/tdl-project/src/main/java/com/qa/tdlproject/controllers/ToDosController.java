@@ -40,7 +40,7 @@ public class ToDosController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<ToDos> getToDoListByUserId(@PathVariable("id") Long id) {
+	public ResponseEntity<ToDos> getToDoById(@PathVariable("id") Long id) {
 		ToDos data = this.service.getOneToDoById(id);
 		return new ResponseEntity<ToDos>(data, HttpStatus.OK);
 	}
@@ -64,6 +64,6 @@ public class ToDosController {
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> deleteToDos(@PathVariable("id") Long id) {
 		this.service.deleteToDos(id);
-		return new ResponseEntity<>(HttpStatus.OK);
+		return new ResponseEntity<>(id, HttpStatus.OK);
 	}
 }
