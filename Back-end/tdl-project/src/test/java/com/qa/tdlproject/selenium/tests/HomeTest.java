@@ -17,7 +17,7 @@ import com.qa.tdlproject.selenium.pages.HomePage;
 import com.qa.tdlproject.selenium.pages.ToDoListPage;
 
 @SpringBootTest
-public class HomeTest {
+class HomeTest {
 
 	private WebDriver driver;
 	
@@ -29,7 +29,7 @@ public class HomeTest {
 	}
 	
 	@Test 
-	public void testOpeningPage() {
+	void testOpeningPage() {
 		//Set up
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 		
@@ -41,7 +41,7 @@ public class HomeTest {
 	}
 	
 	@Test
-	public void testToDoListLink() {
+	void testToDoListLink() {
 		//Set up
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 		ToDoListPage toDoListPage = PageFactory.initElements(driver, ToDoListPage.class);
@@ -57,7 +57,7 @@ public class HomeTest {
 	}
 	
 	@Test
-	public void testLogoImg() {
+	void testLogoImg() {
 		//Set up
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 		
@@ -72,7 +72,7 @@ public class HomeTest {
 	}
 	
 	@Test
-	public void testLogoLink() {
+	void testLogoLink() {
 		//Set up
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 		
@@ -88,7 +88,7 @@ public class HomeTest {
 	
 	
 	@Test
-	public void testLearnMoreBtn() {
+	void testLearnMoreBtn() {
 		//Set up
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 		ToDoListPage toDoListPage = PageFactory.initElements(driver, ToDoListPage.class);
@@ -104,7 +104,7 @@ public class HomeTest {
 	}
 	
 	@Test
-	public void testFooter() {
+	void testFooter() {
 		//Set up
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 

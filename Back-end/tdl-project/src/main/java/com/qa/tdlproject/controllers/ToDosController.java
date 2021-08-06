@@ -24,7 +24,7 @@ import com.qa.tdlproject.services.ToDosService;
 
 @RestController
 @RequestMapping("/todos")
-@CrossOrigin("http://192.168.0.21:5500")
+@CrossOrigin
 public class ToDosController {
 
 	private ToDosService service;
@@ -36,13 +36,13 @@ public class ToDosController {
 	
 	@GetMapping
 	public ResponseEntity<List<ToDos>> getAllToDos() {
-		return new ResponseEntity<List<ToDos>>(this.service.getAllToDos(), HttpStatus.OK);
+		return new ResponseEntity<>(this.service.getAllToDos(), HttpStatus.OK);
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<ToDos> getToDoById(@PathVariable("id") Long id) {
 		ToDos data = this.service.getOneToDoById(id);
-		return new ResponseEntity<ToDos>(data, HttpStatus.OK);
+		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
 	
 	@PostMapping
@@ -52,13 +52,13 @@ public class ToDosController {
 		HttpHeaders httpHeaders = new HttpHeaders();
 		httpHeaders.setLocation(URI.create("localhost:8080/" + data.getTodosId()));
 		
-		return new ResponseEntity<ToDos>(data, httpHeaders, HttpStatus.CREATED);
+		return new ResponseEntity<>(data, httpHeaders, HttpStatus.CREATED);
 	}
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<ToDos> updateToDos(@PathVariable("id") Long id, @RequestBody @Valid ToDos todos) {
 		ToDos data = this.service.updateToDos(id, todos);
-		return new ResponseEntity<ToDos>(data, HttpStatus.OK);
+		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/{id}")

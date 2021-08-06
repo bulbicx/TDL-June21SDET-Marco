@@ -17,18 +17,13 @@ import com.qa.tdlproject.models.ToDos;
 import com.qa.tdlproject.repositories.ToDosRepository;
 
 @SpringBootTest
-public class ToDosServiceUnitTest {
+class ToDosServiceUnitTest {
 
 	@MockBean
 	private ToDosRepository repo;
 	
 	@Autowired
 	private ToDosService service;
-	
-//	@Before
-//	void setup() {
-//		ToDos toDo = new ToDos(1L, "Buy strawberries", false);
-//	}
 	
 	@Test
 	void testCreateUnit() {

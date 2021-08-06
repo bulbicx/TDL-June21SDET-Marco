@@ -45,8 +45,7 @@ public class ToDosService {
 		toDosInDb.setTitle(toDos.getTitle());
 		toDosInDb.setCompleted(toDos.isCompleted());
 		
-		ToDos updatedToDo = this.repository.saveAndFlush(toDosInDb);
-		return updatedToDo;
+		return this.repository.saveAndFlush(toDosInDb);
 	}
 	
 	//It deletes an existing to-do from the database

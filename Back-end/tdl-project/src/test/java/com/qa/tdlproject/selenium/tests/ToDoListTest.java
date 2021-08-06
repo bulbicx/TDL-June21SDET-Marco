@@ -17,8 +17,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.qa.tdlproject.selenium.pages.HomePage;
 import com.qa.tdlproject.selenium.pages.ToDoListPage;
 
+
 @SpringBootTest
-public class ToDoListTest {
+class ToDoListTest {
 
 	private WebDriver driver;
 	
@@ -46,7 +47,7 @@ public class ToDoListTest {
 	}
 	
 	@Test 
-	public void testOpeningPage() {
+	void testOpeningPage() {
 		//Set up
 		ToDoListPage page = PageFactory.initElements(driver, ToDoListPage.class);
 		
@@ -58,7 +59,7 @@ public class ToDoListTest {
 	}
 	
 	@Test
-	public void testHomeNavbarLink() {
+	void testHomeNavbarLink() {
 		//Set up
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 		ToDoListPage toDoListPage = PageFactory.initElements(driver, ToDoListPage.class);
@@ -74,7 +75,7 @@ public class ToDoListTest {
 	}
 	
 	@Test
-	public void testLogoImg() {
+	void testLogoImg() {
 		//Set up
 		ToDoListPage page = PageFactory.initElements(driver, ToDoListPage.class);
 		
@@ -89,7 +90,7 @@ public class ToDoListTest {
 	}
 	
 	@Test
-	public void testLogoLink() {
+	void testLogoLink() {
 		//Set up
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 		ToDoListPage toDoListPage = PageFactory.initElements(driver, ToDoListPage.class);
@@ -105,7 +106,7 @@ public class ToDoListTest {
 	}
 	
 	@Test
-	public void testCreateToDo() {
+	void testCreateToDo() {
 		//Set up
 		ToDoListPage page = PageFactory.initElements(driver, ToDoListPage.class);
 		
@@ -128,7 +129,7 @@ public class ToDoListTest {
 	}
 	
 	@Test
-	public void testGetOneToDo() {
+	void testGetOneToDo() {
 		//Set up
 		ToDoListPage page = PageFactory.initElements(driver, ToDoListPage.class);
 		
@@ -151,7 +152,7 @@ public class ToDoListTest {
 	}
 	
 	@Test
-	public void testUpdateToDo() {
+	void testUpdateToDo() {
 		//Set up
 		ToDoListPage page = PageFactory.initElements(driver, ToDoListPage.class);
 		
@@ -175,7 +176,7 @@ public class ToDoListTest {
 	}
 	
 	@Test
-	public void testDeleteToDo() {
+	void testDeleteToDo() {
 		//Set up
 		ToDoListPage page = PageFactory.initElements(driver, ToDoListPage.class);
 		
@@ -197,7 +198,7 @@ public class ToDoListTest {
 	}
 	
 	@Test
-	public void testGetAllToDo() {
+	void testGetAllToDo() {
 		//Set up
 		ToDoListPage page = PageFactory.initElements(driver, ToDoListPage.class);
 		
@@ -213,7 +214,7 @@ public class ToDoListTest {
 	}
 	
 	@Test
-	public void testFooter() {
+	void testFooter() {
 		//Set up
 		ToDoListPage page = PageFactory.initElements(driver, ToDoListPage.class);
 

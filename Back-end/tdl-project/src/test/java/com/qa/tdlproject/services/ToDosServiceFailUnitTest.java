@@ -11,7 +11,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import com.qa.tdlproject.repositories.ToDosRepository;
 
 @SpringBootTest
-public class ToDosServiceFailUnitTest {
+class ToDosServiceFailUnitTest {
 
 	@MockBean
 	private ToDosRepository repo;

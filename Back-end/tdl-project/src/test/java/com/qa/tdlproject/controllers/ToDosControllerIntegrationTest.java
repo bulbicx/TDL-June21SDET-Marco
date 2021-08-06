@@ -30,7 +30,7 @@ import com.qa.tdlproject.models.ToDos;
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
 @Sql(scripts = {"classpath:sql-schema.sql", "classpath:sql-data.sql"}, executionPhase = ExecutionPhase.BEFORE_TEST_METHOD)
-public class ToDosControllerIntegrationTest {
+class ToDosControllerIntegrationTest {
 
 	//Mock Controller and relevevant mappers
 	@Autowired
