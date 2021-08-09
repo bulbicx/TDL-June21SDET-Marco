@@ -84,13 +84,20 @@ To run Selenium tests using chrome web driver we can right click onto the seleni
 
 ![Selenium Tests](https://user-images.githubusercontent.com/56220535/128326573-7de8e24a-14a4-4389-9589-f458dff3d57b.PNG)
 
-### And coding style tests
+### SonarQube tests
 
-There are no coding styles tests for this application
+SonarQube is used for reports on bugs, code quality, vulnerabilities, code duplications and code smells. In order to run a test with SonarQube we need to clear our backend first. So, let's open Git bash from our project path(Be sure to be in the backend side) and type the following:
 
-## Deployment
+```
+java clean package
+```
+This will also run tests we have set up and produce a JAR file. Wait for it to finish. You need to install SonarQube Community Edition from this [link](https://www.sonarqube.org/downloads/) if you do not have it yet.
+After the clean is done, we need to type the following:
 
-This application is not ready for deployment.
+```
+mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=login -Dsonar.password=password
+ ```
+Substitute the login and password with your personal login details and press enter. Now we are able to access the test from *localhost:9000*. 
 
 ## Built With
 
